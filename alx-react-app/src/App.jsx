@@ -25,7 +25,7 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
-      <UserProfile name="Dalal" age="24" bio="Front-End Web Developer" />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
