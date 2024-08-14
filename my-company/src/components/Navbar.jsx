@@ -9,6 +9,8 @@ function NavBar() {
     <>
       <nav
         style={{
+          backgroundColor: "hsl(0, 0%, 11%)",
+          padding: "20px",
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
