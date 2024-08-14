@@ -1,4 +1,9 @@
-function UserProfile(props) {
+import React from "react";
+import { createContext } from "react";
+import { useContext } from "react";
+
+function UserProfile() {
+  const UserContext = createContext();
   return (
     <div>
       <h2>{props.name}</h2>
