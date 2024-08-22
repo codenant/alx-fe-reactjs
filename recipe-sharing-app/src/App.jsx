@@ -2,13 +2,24 @@ import "./App.css";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeDetails from "./components/RecipeDetails";
 import RecipeList from "./components/RecipeList";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <RecipeList />
-      <AddRecipeForm />
-      <RecipeDetails />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <RecipeList />
+                <AddRecipeForm />
+              </>
+            }
+          />
+          <Route path="/details/:recipeId" element={<RecipeDetails />} />
+        </Routes>
+      </Router>
     </>
   );
 }
