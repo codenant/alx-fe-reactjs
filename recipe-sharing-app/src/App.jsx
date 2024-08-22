@@ -4,6 +4,7 @@ import FavoritesList from "./components/FavoritesList";
 import RecipeDetails from "./components/RecipeDetails";
 import RecipeList from "./components/RecipeList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import RecommendationList from "./components/RecommendationsList";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
                 <RecipeList />
                 <AddRecipeForm />
                 <FavoritesList />
+                <RecommendationList />
               </>
             }
           />
