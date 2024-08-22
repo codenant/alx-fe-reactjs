@@ -22,6 +22,16 @@ const useRecipeStore = create((set) => ({
       favorites: state.favorites.filter((id) => id !== recipeId),
     })),
 
+  recommendations: [],
+  generateRecommendations: () =>
+    set((state) => {
+      const recommended = state.recipes.filter(
+        (recipe) => state.favorites.includes(recipe.id && Math.random() > 0.5) //Randomness makes this function non-functional, because our array isn't large enough.
+      );
+      console.log(recommended);
+      return { recommendations: recommended };
+    }),
+
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
   deleteRecipes: (id) =>
