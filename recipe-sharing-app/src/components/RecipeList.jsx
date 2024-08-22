@@ -5,11 +5,26 @@ import { useEffect } from "react";
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
-  const { searchTerm, filterRecipes, filteredRecipes } = useRecipeStore();
+  const {
+    searchTerm,
+    filterRecipes,
+    filteredRecipes,
+    favorites,
+    addFavorite,
+    removeFavorite,
+  } = useRecipeStore();
 
   useEffect(() => {
     filterRecipes();
   }, [searchTerm, filterRecipes]);
+
+  const toggleButton = (recipeId) => {
+    if (favorites.includes(recipeId)) {
+      removeFavorite(recipeId);
+    } else {
+      addFavorite(recipeId);
+    }
+  };
 
   if (searchTerm === "") {
     return (
@@ -20,6 +35,18 @@ const RecipeList = () => {
             <h3>{recipe.title}</h3>
             <p>{recipe.description}</p>
             <Link to={`/details/${recipe.id}`}>More Details</Link>
+            <button
+              style={{
+                display: "block",
+                marginBottom: "10px",
+                width: "fit-content",
+              }}
+              onClick={() => toggleButton(recipe.id)}
+            >
+              {favorites.includes(recipe.id)
+                ? "Remove from Favorites"
+                : "Add to Favorites"}
+            </button>
           </div>
         ))}
       </div>
