@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const RecipeDetails = () => {
   let { recipeId } = useParams();
   const recipe = useRecipeStore((state) =>
-    state.recipes.find((recipe) => recipe.id === recipeId)
+    state.recipes.find((recipe) => recipe.id === +recipeId)
   );
 
   return (
