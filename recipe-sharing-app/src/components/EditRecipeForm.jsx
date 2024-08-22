@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const EditRecipeForm = ({ recipeId }) => {
   const recipes = useRecipeStore((state) =>
-    state.recipes.find((recipe) => recipe.id === recipeId)
+    state.recipes.find((recipe) => recipe.id === +recipeId)
   );
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
   const [title, setTitle] = useState(
@@ -15,7 +15,7 @@ const EditRecipeForm = ({ recipeId }) => {
 
   const handleUpdate = (event) => {
     event.preventDefault();
-    updateRecipe({ id: recipeId, title, description });
+    updateRecipe({ id: +recipeId, title, description });
   };
 
   return (
