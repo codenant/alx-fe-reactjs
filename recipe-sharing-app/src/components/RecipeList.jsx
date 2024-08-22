@@ -31,14 +31,19 @@ const RecipeList = () => {
       <div>
         <SearchBar />
         {recipes.map((recipe) => (
-          <div key={recipe.id}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+            key={recipe.id}
+          >
             <h3>{recipe.title}</h3>
             <p>{recipe.description}</p>
             <Link to={`/details/${recipe.id}`}>More Details</Link>
             <button
               style={{
-                display: "block",
-                marginBottom: "10px",
                 width: "fit-content",
               }}
               onClick={() => toggleButton(recipe.id)}
