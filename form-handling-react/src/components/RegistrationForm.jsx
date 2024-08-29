@@ -1,11 +1,9 @@
 import { useState } from "react";
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const [errors, setErrors] = useState({});
 
@@ -13,31 +11,35 @@ const RegistrationForm = () => {
     e.preventDefault();
 
     const validateErrors = {};
-    if (formData.username.trim() === "") {
+    if (username.trim() === "") {
       validateErrors.username = "Username is required";
     }
 
-    if (formData.email.trim() === "") {
+    if (email.trim() === "") {
       validateErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
       validateErrors.email = "Enter a valid email format";
     }
 
-    if (formData.password.trim() === "") {
+    if (password.trim() === "") {
       validateErrors.password = "Password is required";
-    } else if (formData.password.length < 8) {
+    } else if (password.length < 8) {
       validateErrors.password = "Password must be longer than 8 characters";
     }
 
     setErrors(validateErrors);
-    console.log(formData);
+    console.log(username, email, password);
   };
 
   const handleChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+    // setFormData((prevState) => ({
+    //   ...prevState,
+    //   [e.target.name]: e.target.value,
+    // }));
+    const { name, value } = e.target;
+    if (name === "username") setUsername(value);
+    if (name === "email") setEmail(value);
+    if (name === "password") setPassword(value);
   };
 
   return (
@@ -49,7 +51,7 @@ const RegistrationForm = () => {
         type="text"
         placeholder="Username"
         name="username"
-        value={formData.username}
+        value={username}
         onChange={handleChange}
       />
       {errors.username && (
@@ -59,7 +61,7 @@ const RegistrationForm = () => {
         type="email"
         placeholder="Email"
         name="email"
-        value={formData.email}
+        value={email}
         onChange={handleChange}
       />
       {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
@@ -67,7 +69,7 @@ const RegistrationForm = () => {
         type="password"
         placeholder="Password"
         name="password"
-        value={formData.password}
+        value={password}
         onChange={handleChange}
       />
       {errors.password && (
