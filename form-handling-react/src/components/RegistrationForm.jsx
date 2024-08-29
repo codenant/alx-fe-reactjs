@@ -28,18 +28,11 @@ const RegistrationForm = () => {
     }
 
     setErrors(validateErrors);
-    console.log(username, email, password);
-  };
-
-  const handleChange = (e) => {
-    // setFormData((prevState) => ({
-    //   ...prevState,
-    //   [e.target.name]: e.target.value,
-    // }));
-    const { name, value } = e.target;
-    if (name === "username") setUsername(value);
-    if (name === "email") setEmail(value);
-    if (name === "password") setPassword(value);
+    console.log(
+      `Username: ${username}`,
+      `Email: ${email}`,
+      `Password: ${password}`
+    );
   };
 
   return (
@@ -52,7 +45,7 @@ const RegistrationForm = () => {
         placeholder="Username"
         name="username"
         value={username}
-        onChange={handleChange}
+        onChange={(e) => setUsername(e.target.value)}
       />
       {errors.username && (
         <span style={{ color: "red" }}>{errors.username}</span>
@@ -62,7 +55,7 @@ const RegistrationForm = () => {
         placeholder="Email"
         name="email"
         value={email}
-        onChange={handleChange}
+        onChange={(e) => setEmail(e.target.value)}
       />
       {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
       <input
@@ -70,7 +63,7 @@ const RegistrationForm = () => {
         placeholder="Password"
         name="password"
         value={password}
-        onChange={handleChange}
+        onChange={(e) => setPassword(e.target.value)}
       />
       {errors.password && (
         <span style={{ color: "red" }}>{errors.password}</span>
