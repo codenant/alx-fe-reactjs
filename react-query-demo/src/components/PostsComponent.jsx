@@ -23,9 +23,10 @@ const PostsComponent = () => {
 
   return (
     <div>
-      {data.map((post) => (
+      {data.slice(0, 20).map((post) => (
         <div key={post.id}>{post.title}</div>
       ))}
+      <button onClick={fetchPosts}>Refetch Posts</button>
     </div>
   );
 };
