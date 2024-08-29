@@ -11,17 +11,17 @@ const RegistrationForm = () => {
     e.preventDefault();
 
     const validateErrors = {};
-    if (username.trim() === "") {
+    if (!username.trim()) {
       validateErrors.username = "Username is required";
     }
 
-    if (email.trim() === "") {
+    if (!email.trim()) {
       validateErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       validateErrors.email = "Enter a valid email format";
     }
 
-    if (password.trim() === "") {
+    if (!password.trim()) {
       validateErrors.password = "Password is required";
     } else if (password.length < 8) {
       validateErrors.password = "Password must be longer than 8 characters";
