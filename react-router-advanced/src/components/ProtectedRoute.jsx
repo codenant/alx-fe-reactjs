@@ -1,9 +1,8 @@
-import Profile from "./Profile";
+import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = () => {
-  let auth = { token: true };
-
-  return auth.token ? <Profile /> : "Please create a profile";
+  let useAuth = { token: true };
+  return useAuth.token ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;
