@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route element={<ProtectedRoute />}>
-          <Route path="*" element={<Profile />} exact />
+          <Route path="/profile/*" element={<Profile />} exact />
         </Route>
         <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
