@@ -8,14 +8,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="*"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
+        <Route element={<ProtectedRoute />}>
+          <Route path="*" element={<Profile />} exact />
+        </Route>
         <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </Router>
