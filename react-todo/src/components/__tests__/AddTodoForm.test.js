@@ -1,4 +1,4 @@
-import AddTodoForm from "./AddTodoForm";
+import AddTodoForm from "../AddTodoForm";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 test("renders AddTodoForm component", () => {
