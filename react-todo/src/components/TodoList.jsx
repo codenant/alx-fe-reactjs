@@ -1,4 +1,8 @@
 function TodoList({ todos, setTodos }) {
+  // const [todos, setTodos] = useState([
+  //     { id: 1, title: "Lorem ipsum", completed: false },
+  //     { id: 2, title: "dolor sit amet", completed: false },
+  // ]);
   const handleDelete = (id) => {
     const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
