@@ -6,11 +6,11 @@ function AddRecipeForm() {
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!title || !summary || !ingredients || !instructions) {
+    if (!title || !summary || !ingredients || !steps) {
       alert("Please fill out all fields");
     }
     const newRecipe = {
@@ -24,7 +24,7 @@ function AddRecipeForm() {
     setTitle("");
     setSummary("");
     setIngredients("");
-    setInstructions("");
+    setSteps("");
     console.log(newRecipe);
   };
 
@@ -66,8 +66,8 @@ function AddRecipeForm() {
           id="instructions"
           cols="45"
           placeholder="Enter cooking instructions"
-          value={instructions}
-          onChange={(e) => setInstructions(e.target.value)}
+          value={steps}
+          onChange={(e) => setSteps(e.target.value)}
           className="border-solid border-2 border-yellow-600 rounded-md p-2"
         />
         {/* <input type="file" name="img" id="img" className="mx-auto" /> */}
