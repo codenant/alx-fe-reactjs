@@ -8,11 +8,31 @@ function AddRecipeForm() {
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
 
+  const [errors, setErrors] = useState({});
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!title || !summary || !ingredients || !steps) {
-      alert("Please fill out all fields");
+    // if (!title || !summary || !ingredients || !steps) {
+    //   alert("Please fill out all fields");
+    // }
+    const validate = {};
+    if (!title) {
+      validate.title = "Title is required";
     }
+
+    if (!summary) {
+      validate.summary = "Summary is required";
+    }
+
+    if (!ingredients) {
+      validate.ingredients = "Ingredients are required";
+    }
+
+    if (!steps) {
+      validate.steps = "Cooking steps are required";
+    }
+    setErrors(validate);
+
     const newRecipe = {
       id: Date.now(),
       title,
@@ -29,7 +49,7 @@ function AddRecipeForm() {
   };
 
   return (
-    <div className="bg-neutral-50 p-3 shadow-lg w-1/2 m-auto mt-3 rounded-sm">
+    <div className="bg-neutral-50 p-3 shadow-lg sm:w-full md:w-1/2 m-auto mt-3 rounded-sm">
       <form
         className="flex flex-col place-items-center gap-5 mt-2"
         onSubmit={handleSubmit}
@@ -43,6 +63,7 @@ function AddRecipeForm() {
           onChange={(e) => setTitle(e.target.value)}
           className="border-solid border-2 border-yellow-600 rounded-md p-2"
         />
+        {errors.title && <span className="text-red-600">{errors.title}</span>}
         <input
           type="text"
           name="summary"
@@ -52,6 +73,9 @@ function AddRecipeForm() {
           onChange={(e) => setSummary(e.target.value)}
           className="border-solid border-2 border-yellow-600 rounded-md p-2"
         />
+        {errors.summary && (
+          <span className="text-red-600">{errors.summary}</span>
+        )}
         <textarea
           name="ingredients"
           id="ingredients"
@@ -61,6 +85,9 @@ function AddRecipeForm() {
           onChange={(e) => setIngredients(e.target.value)}
           className="border-solid border-2 border-yellow-600 rounded-md p-2"
         />
+        {errors.ingredients && (
+          <span className="text-red-600">{errors.ingredients}</span>
+        )}
         <textarea
           name="instructions"
           id="instructions"
@@ -70,7 +97,7 @@ function AddRecipeForm() {
           onChange={(e) => setSteps(e.target.value)}
           className="border-solid border-2 border-yellow-600 rounded-md p-2"
         />
-        {/* <input type="file" name="img" id="img" className="mx-auto" /> */}
+        {errors.steps && <span className="text-red-600">{errors.steps}</span>}
         <button
           type="submit"
           className="bg-yellow-600 text-neutral-50 rounded-lg p-3"
