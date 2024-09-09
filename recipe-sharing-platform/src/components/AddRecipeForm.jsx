@@ -100,7 +100,7 @@ function AddRecipeForm() {
         {errors.steps && <span className="text-red-600">{errors.steps}</span>}
         <button
           type="submit"
-          className="bg-yellow-600 text-neutral-50 rounded-lg p-3"
+          className="bg-yellow-600 text-neutral-50 rounded-lg p-3 font-bold"
         >
           Add Recipe
         </button>
