@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import data from "../data.json";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setRecipes(data);
   }, []);
+
+  const handleClick = (id) => {
+    navigate(`/recipe/${id}`);
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center">
@@ -14,6 +20,7 @@ const HomePage = () => {
         <div
           key={recipe.id}
           className="bg-neutral-50 m-5 rounded w-8/12 shadow-md hover:shadow-lg transition ease-in-out duration-100"
+          onClick={() => handleClick(recipe.id)}
         >
           <img
             src={recipe.image}
