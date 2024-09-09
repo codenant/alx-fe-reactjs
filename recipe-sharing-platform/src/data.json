@@ -3,24 +3,32 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": "- Lorem ipsum \n- Dolor sit amet \n- Consectetur adipiscing elit. \n- Morbi laoreet lectus \n- Sed tortor bibendum consequat.",
+    "steps": "Lorem ipsum dolor sit amet 350\u00b0 F. In posuere enim nec felis fermentum pretium. \r\nInteger urna, \u00bd Sed consequat ante vel arcu vehicula elementum. Donec vel imperdiet diam.\r\nPellentesque eu porta odio. Sed in dui sit amet ante pulvinar elementum in in odio. Duis ex justo, scelerisque non tristique non, auctor ut tellus.\r\nFusce vitae maximus lorem. Nam tincidunt congue rutrum. In bibendum volutpat lacinia. Nunc at orci ut arcu consequat efficitur in nec tellus. Suspendisse pretium lobortis venenatis."
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": "- Lorem ipsum \n- Dolor sit amet \n- Consectetur adipiscing elit. \n- Morbi laoreet lectus \n- Sed tortor bibendum consequat.",
+    "steps": "Lorem ipsum dolor sit amet 350\u00b0 F. In posuere enim nec felis fermentum pretium. \r\nInteger urna, \u00bd Sed consequat ante vel arcu vehicula elementum. Donec vel imperdiet diam.\r\nPellentesque eu porta odio. Sed in dui sit amet ante pulvinar elementum in in odio. Duis ex justo, scelerisque non tristique non, auctor ut tellus.\r\nFusce vitae maximus lorem. Nam tincidunt congue rutrum. In bibendum volutpat lacinia. Nunc at orci ut arcu consequat efficitur in nec tellus. Suspendisse pretium lobortis venenatis."
   },
   {
     "id": 3,
     "title": "Chicken Stir-Fry",
     "summary": "Quick, easy, and delicious way to use any leftover vegetables",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": "- Lorem ipsum \n- Dolor sit amet \n- Consectetur adipiscing elit. \n- Morbi laoreet lectus \n- Sed tortor bibendum consequat.",
+    "steps": "Lorem ipsum dolor sit amet 350\u00b0 F. In posuere enim nec felis fermentum pretium. \r\nInteger urna, \u00bd Sed consequat ante vel arcu vehicula elementum. Donec vel imperdiet diam.\r\nPellentesque eu porta odio. Sed in dui sit amet ante pulvinar elementum in in odio. Duis ex justo, scelerisque non tristique non, auctor ut tellus.\r\nFusce vitae maximus lorem. Nam tincidunt congue rutrum. In bibendum volutpat lacinia. Nunc at orci ut arcu consequat efficitur in nec tellus. Suspendisse pretium lobortis venenatis."
   },
   {
     "id": 4,
     "title": "Thai Turkey Meatballs",
     "summary": "Made with Thai curry paste and simmered in a creamy coconut curry sauce",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": "- Lorem ipsum \n- Dolor sit amet \n- Consectetur adipiscing elit. \n- Morbi laoreet lectus \n- Sed tortor bibendum consequat.",
+    "steps": "Lorem ipsum dolor sit amet 350\u00b0 F. In posuere enim nec felis fermentum pretium. \r\nInteger urna, \u00bd Sed consequat ante vel arcu vehicula elementum. Donec vel imperdiet diam.\r\nPellentesque eu porta odio. Sed in dui sit amet ante pulvinar elementum in in odio. Duis ex justo, scelerisque non tristique non, auctor ut tellus.\r\nFusce vitae maximus lorem. Nam tincidunt congue rutrum. In bibendum volutpat lacinia. Nunc at orci ut arcu consequat efficitur in nec tellus. Suspendisse pretium lobortis venenatis."
   }
 ]
