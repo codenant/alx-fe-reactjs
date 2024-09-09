@@ -9,7 +9,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 place-items-center">
+    <div className="grid sm:grid-cols-1 md:grid-cols-3 place-items-center">
       {recipes?.map((recipe) => (
         <div
           key={recipe.id}
