@@ -9,7 +9,7 @@ async function fetchUserData(username, location, minRepos) {
   if (location) {
     query += `location:${location}`;
   }
-  if (repos) {
+  if (minRepos) {
     query += `repos:>${minRepos}`;
   }
 
