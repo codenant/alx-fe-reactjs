@@ -44,7 +44,7 @@ function Search() {
 
     setUsername("");
     setLocation("");
-    setRepos("");
+    setMinRepos("");
   };
 
   return (
