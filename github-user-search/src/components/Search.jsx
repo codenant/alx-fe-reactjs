@@ -9,18 +9,38 @@ function Search() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     setLoading(true);
+  //     setError(null);
+  //     setData(null);
+
+  //     fetchUserData(username, location, repos)
+  //       .then((response) => {
+  //         setData(response);
+  //       })
+  //       .catch(() => setError("Looks like we cant find the user."))
+  //       .finally(() => setLoading(false));
+
+  //     setUsername("");
+  //     setLocation("");
+  //     setRepos("");
+  //   };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
     setData(null);
 
-    fetchUserData(username, location, repos)
-      .then((response) => {
-        setData(response);
-      })
-      .catch(() => setError("Looks like we cant find the user."))
-      .finally(() => setLoading(false));
+    try {
+      const response = await fetchUserData(username, location, repos);
+      setData(response);
+    } catch (error) {
+      setError("Looks like we can't find the user.");
+    } finally {
+      setLoading(false);
+    }
 
     setUsername("");
     setLocation("");
