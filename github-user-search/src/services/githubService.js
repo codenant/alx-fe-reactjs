@@ -25,11 +25,11 @@ async function fetchUserData(username, location, minRepos) {
   //       // .get(`https://api.github.com/users/${username}`)
   //       .get(`https://api.github.com/search/users?q=${query}`)
   //       .then((response) => {
-  //         console.log(response.data);
+  //
   //         return response.data.items;
   //       })
   //       .catch((error) => {
-  //         console.error("Looks like we cant find the user");
+  //
   //         throw error;
   //       })
   //   );
