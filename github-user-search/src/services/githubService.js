@@ -19,7 +19,6 @@ async function fetchUserData(username, location, minRepos) {
     );
     return response.data.items;
   } catch (error) {
-    console.error("Looks like we cant find the user");
     throw error;
   }
   //     axios
