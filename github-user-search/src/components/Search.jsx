@@ -4,7 +4,7 @@ import fetchUserData from "../services/githubService";
 function Search() {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
-  const [repos, setRepos] = useState("");
+  const [minRepos, setMinRepos] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -34,7 +34,7 @@ function Search() {
     setData(null);
 
     try {
-      const response = await fetchUserData(username, location, repos);
+      const response = await fetchUserData(username, location, minRepos);
       setData(response);
     } catch (error) {
       setError("Looks like we can't find the user.");
@@ -88,8 +88,8 @@ function Search() {
           name="repos"
           id="repos"
           placeholder="Enter a number..."
-          value={repos}
-          onChange={(e) => setRepos(e.target.value)}
+          value={minRepos}
+          onChange={(e) => setMinRepos(e.target.value)}
           className="bg-dustGray text-darkestGreen rounded-md w-4/5 mx-auto p-2"
         />
         <button
